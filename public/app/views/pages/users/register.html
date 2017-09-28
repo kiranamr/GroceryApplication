@@ -1,0 +1,41 @@
+
+<div class="container">
+        <div class="card card-container">
+<center><h2>User registration</h2></center>
+<br>
+<form class="form-signin" ng-submit="register.regUser(regData);">
+<label>First Name:</label>
+	<input type="text" class="form-control" name="fname"  placeholder="Enter the firstname" ng-model="register.regData.fname" required>
+	<br>
+	<label>Last Name:</label>
+	<input type="text" class="form-control"  name="lname"  placeholder="Enter the lastname" ng-model="register.regData.lname" required>
+	<br>
+	<label>Email:</label>
+	<input type="text" name="email" class="form-control" placeholder="Enter the email" ng-model="register.regData.email" required>
+	<br>
+	
+	<label>Username:</label>
+	<input type="text" name="username" class="form-control" placeholder="Enter the username" ng-model="register.regData.username" required>
+
+	<br>
+	<label>Password:</label>
+	<input type="password" name="password" class="form-control" placeholder="Enter the password" ng-model="register.regData.password" required>
+
+	<br>
+	<label>Mobile Number:</label>
+	<input type="text" name="password" class="form-control" placeholder="Enter the mobile number" ng-model="register.regData.mobile" required>
+
+	<br>
+	<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign up</button>
+</form>
+
+<br>
+
+</div>
+</div>
+
+
+	
+
+
+

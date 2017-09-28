@@ -1,0 +1,187 @@
+
+
+  
+  <div class="row">
+ <div class="col-md-12">
+                      <div class="col-md-2">
+
+                      </div>
+                       <div class="col-md-8">
+                       
+                         <br>
+                       <br>
+                       <div class="jumbotron">
+
+                      <b> Greetings from<br>
+                       Optime academy<br><br>
+
+                       Dear Sir/Madam,<br>
+                      <p style="text-align: justify; font-size:100%; "> <b>We the students of Optime academy doing a survey project on Grocery, Vegetables-Fruits, Condiments & Other food items. As a part of our subject Principles of Marketing to understand the real time principles of marketing.</b></p>
+                      
+
+                       Please help us in providing some information as part of our study.</b>
+</div>
+<div class="jumbotron">
+
+
+<form name="myForm" ng-submit="add.regSurvey(regData);">
+  
+
+  <br>
+  <label>Name: <font color="red">*</font>(Required) <input type="text"  class="form-control" ng-model="add.regData.name" name="name" required /></label>
+
+  <br>
+  <label>Contact No: <font color="red"> *</font><input type="text" class="form-control" ng-model="add.regData.phone" name="phone" ng-pattern="/^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/" required>
+  <span class="error" ng-show="myForm.phone.$error.pattern">
+        Not valid mobile number!
+      </span></label><br>
+  <label>Email: <input type="email" name="email" class="form-control" ng-model="add.regData.email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" >
+      
+     <span class="error" ng-show="myForm.email.$error.pattern">
+        Not valid email!
+      </span></label>  
+      <br>
+   <b>Address: </b><br>
+ <textarea class="form-group" name="Address" ng-model="add.regData.address"></textarea> <br>
+  <label>Pin Code: <input type="text" class="form-control" ng-model="add.regData.pincode" ng-pattern="/^[1-9][0-9]{5}$/" name="pincode"> <span class="error" ng-show="myForm.pincode.$error.pattern">
+        Not valid pincode!
+      </span></label><br>
+  
+
+  <b>1.Are you aware of Online Grocery Market?</b><font color="red"> *</font><br>
+
+ <label><input type="radio" name="aware"  ng-model="add.regData.aware" value="Yes" required /> Yes </label><br>
+  <label><input type="radio" name="aware"  ng-model="add.regData.aware" value="No" required /> No </label><br>
+  <br>
+  
+  
+  <b> 2.What is your opinion on free door delivery?</b><font color="red"> *</font><br>
+    <label><input type="radio" name="opinion"  ng-model="add.regData.opinion" value="Good" required/> Good  </label><br>
+    <label><input type="radio" name="opinion"  ng-model="add.regData.opinion" value="Bad" required /> Bad </label><br>
+      <label><input type="radio" name="opinion"  ng-model="add.regData.opinion" value="Very much need" required/> Very much need  </label><br>
+    <label><input type="radio" name="opinion"  ng-model="add.regData.opinion" value="None" required /> None </label>
+  <br><br>
+
+  <b>3.Would you like to prefer such kind of service / give a chance to such kind of service?</b><font color="red"> *</font><br>
+   <label><input type="radio" name="prefer"  ng-model="add.regData.prefer" value="Yes" required /> Yes </label><br>
+    <label><input type="radio" name="prefer"  ng-model="add.regData.prefer" value="No" required /> No </label>
+    
+  <br><br>
+  <b>4.How much do you spend monthly grocery?</b><font color="red"> *</font><input type="text" name="spend" ng-pattern="/^-?[0-9]\d*(\.\d*)?$/" ng-model="add.regData.spend" required >
+  <span ng-show="myForm.spend.$error.pattern"> Not a valid number!</span><br>
+  <br>
+ <b>5.How many times would you like to recieve such service in a month ?</b><font color="red"> *</font><br>
+ <label><input type="radio" name="recieve"  ng-model="add.regData.recieve" value="Monthly once" required /> Monthly once </label><br>
+    <label><input type="radio" name="recieve"  ng-model="add.regData.recieve" value="Monthly twice" required /> Monthly twice </label><br>
+   
+  <br><br>
+  <b>6.What is your opinion on farm fresh fruits and vegetables door delivery?</b><font color="red"> *</font> <br>
+  <label><input type="radio" name="farmfresh"  ng-model="add.regData.farmfresh" value="Helpful" required /> Helpful</label><br>
+    <label><input type="radio" name="farmfresh"  ng-model="add.regData.farmfresh" value="Not helpful" required /> Not helpful </label><br>
+    <br>
+  
+   <b>7.How often do you buy fruits and vegetables?</b><font color="red"> *</font><br>
+   <label><input type="radio" name="buy"  ng-model="add.regData.buy" value="Weekly once" required /> Weekly once</label><br>
+    <label><input type="radio" name="buy"  ng-model="add.regData.buy" value="Weekly twice" required /> Weekly twice</label>
+
+
+  <br><br>
+  <b>8.On average, what portion of your weekly food budget is spent on fresh fruits and vegetables?</b><font color="red"> *</font><br>
+   <label><input type="radio" name="average"  ng-model="add.regData.average" value="0-25%" required />  0-25%</label><br>
+    <label><input type="radio" name="average" ng-model="add.regData.average" value="25-50%" required /> 25-50%</label><br>
+<label><input type="radio" name="average"  ng-model="add.regData.average" value="50-75%" required /> 50-75%</label>
+
+
+<br>
+  <br>
+  <b>9.Are you interest in fresh home made condimends (Keeping health in concern)?</b><font color="red"> *</font>
+  <br>
+  <label><input type="radio" name="interest" ng-model="add.regData.interest" value="Yes" required /> Yes</label><br>
+<label><input type="radio" name="interest"  ng-model="add.regData.interest" value="No" required /> No</label>
+  <br>
+  <br>
+  <b>10.As an end customer, I prefer for quality than for price, how would you agree to this statement?</b><font color="red"> *</font><br>
+   <label><input type="radio" name="agree"  ng-model="add.regData.agree" value="Strongly Agree" required /> Strongly agree</label><br>
+    <label><input type="radio" name="agree" ng-model="add.regData.agree" value="Agree" required /> Agree</label><br>
+<label><input type="radio" name="agree"  ng-model="add.regData.agree" value="None" required /> None</label><br>
+<label><input type="radio" name="agree"  ng-model="add.regData.agree" value="Disagree" required /> Disagree</label>
+
+<br><br>
+<b>11.Are you a Vegetarian or Non-Vegetarian?</b><font color="red"> *</font><br>
+<label><input type="radio" name="veg_nonveg"  ng-model="add.regData.veg_nonveg" value="Vegetarian" required /> Vegetarian</label><br>
+    <label><input type="radio" name="veg_nonveg" ng-model="add.regData.veg_nonveg" value="Non-Vegetarian" required /> Non-Vegetarian</label>
+
+<br><br>
+<b>12.Would you like to have special Hyderabad-Non veg items, from Hyderabad to be availed in Raichur?</b><font color="red"> *</font><br>
+ 
+
+<label><input type="radio" name="special_Hyd"  ng-model="add.regData.special_Hyd" value="Yes" required /> Yes</label><br>
+<label><input type="radio" name="special_Hyd"  ng-model="add.regData.special_Hyd" value="No" required /> No</label>
+<br><br>
+<b>13.Which would be your favourite hotel in Hyderabad for Non-veg food?</b><font color="red"> *</font><br>
+
+<label><input type="radio" name="favourite"   ng-model="add.regData.favourite" value="Paradise" ng-click="ShowPassport('Paradise')" required /> Paradise</label><br>
+    <label><input type="radio" name="favourite" ng-model="add.regData.favourite" value="Bawarchi" ng-click="ShowPassport('Bawarchi')" required /> Bawarchi </label><br>
+<label><input type="radio" name="favourite"  ng-model="add.regData.favourite" value="Hyderabad House" ng-click="ShowPassport('Hyderabad House')" required /> Hyderabad House</label><br>
+<label><input type="radio" name="favourite"  ng-click="ShowPassport('others')" /> Others specify <input type="text"   ng-show="IsVisibleHotel" ng-model="add.regData.favourite"  required /></label>
+  
+ 
+            
+          <br>
+       
+
+
+<br> 
+<b>14.If Special Non-veg items from Hyderabad would be availed in Raichur, than at what intervals would you prefer?</b><font color="red"> *</font><br>
+<label><input type="radio" name="availed_in_Raichur"  ng-model="add.regData.availed_in_Raichur" ng-click="ShowPassportSpecial('Weekly once')" value="Weekly once" required /> Weekly once</label><br>
+    <label><input type="radio" name="availed_in_Raichur" ng-model="add.regData.availed_in_Raichur" ng-click="ShowPassportSpecial('Weekly twice')" value="Weekly twice" required /> Weekly twice </label><br>
+<label><input type="radio" name="availed_in_Raichur"  ng-model="add.regData.availed_in_Raichur" ng-click="ShowPassportSpecial('Every two weeks')" value="Every two weeks" required /> Every two weeks</label><br>
+<label><input type="radio" name="availed_in_Raichur"   ng-click="ShowPassportSpecial('otherspecial')" /> Others specify <input type="text"   ng-show="IsVisibleSpecial" ng-model="add.regData.availed_in_Raichur"  required /></label><br>
+
+
+
+
+<br>
+  <label>15.It is Ok with you to pay delivery charges for Hyderabad Special Non-veg items,made avilable in Raichur?<font color="red"> *</font></label>
+  <br>
+
+ <label><input type="radio" name="delivery"  ng-model="add.regData.delivery" value="Yes" required /> Yes</label><br>
+   <label><input type="radio" name="delivery"  ng-model="add.regData.delivery" value="No" required /> No</label><br>
+   <label><input type="radio" name="delivery"  ng-model="add.regData.delivery" value="Per order basis" required /> Per order basis</label><br>
+   <br>
+  <label>16.Are you aware of organic/pesticide free food product?<font color="red"> *</font></label>
+  <br>
+
+ <label><input type="radio" name="organic"  ng-model="add.regData.organic" value="Yes" required /> Yes</label><br>
+   <label><input type="radio" name="organic"  ng-model="add.regData.organic" value="No" required /> No</label><br>
+  <br>
+  <label>17.Would you like to buy organic food products, if availed at your doorstep?<font color="red"> *</font></label>
+  <br>
+
+ <label><input type="radio" name="doorstep"  ng-model="add.regData.doorstep" value="Yes" required /> Yes</label><br>
+   <label><input type="radio" name="doorstep"  ng-model="add.regData.doorstep" value="No" required /> No</label><br>
+   <br>
+  <label>Student Code: <input type="text" class="form-control" ng-model="add.regData.studentcode" name="studentcode"  /></label>
+ 
+ <center><button class="btn btn-primary" type="submit">Submit</button></center> 
+</form>
+<br>
+
+
+
+</div>
+</div>
+ <div class="col-md-2">
+ </div>
+ </div>
+ </div>
+
+
+
+
+
+
+
+<br>
+<br>
+<br>

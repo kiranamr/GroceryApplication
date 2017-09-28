@@ -1,0 +1,55 @@
+<style>
+
+.container {
+  
+   position: relative;
+   width: 100%;
+   padding-top: 10%; /* 3:2 Aspect Ratio */
+}
+h1 {
+    color: blue;
+    font-family: verdana;
+    font-size: 300%;
+    }
+    h3 {
+    color: #151515;
+    font-family: verdana;
+    font-size: 150%;
+    }
+     h2 {
+    
+    font-family: verdana;
+   
+    }
+    th{
+      background-color: #819FF7;
+       color:black ;
+    
+    font-size: 100%;
+    }
+
+table, th , td  {
+  border: 2px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+body{
+  background-color: #FFFFFF;
+}
+li{
+  background-color: #0174DF;
+}
+table tr:nth-child(odd) {
+  background-color: #F5D0A9;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+.jumbotron
+{
+    background-color:#0080FF;
+    text-align:center;
+}
+
+</style>

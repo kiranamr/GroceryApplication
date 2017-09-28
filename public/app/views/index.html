@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+
+    <title>Login</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+     <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <script src="assets/js/angular.js"></script>
+    <script src="assets/js/angular-route.js"></script>
+    <script src="assets/js/angular-animate.js"></script>
+
+    <script src="app/app.js"></script>
+    <script  src="app/routes.js"></script>
+
+    <script src="app/controllers/userCtrl.js"></script>
+    <script src="app/controllers/mainCtrl.js"></script>
+   <script src="app/controllers/viewpageCtrl.js"></script>
+   
+
+<script src="app/controllers/dashboardCtrl.js"></script>
+
+    <script src="app/services/userServices.js"></script>
+    <script src="app/services/authServices.js"></script>
+    <script src="app/services/surveyServices.js"></script>
+     <link href="assets/css/cssStyle.css" rel="stylesheet">
+     <style type="text/css">[ng-required]:after {
+  content: "*"
+}</style>
+ 
+    
+   
+  </head>
+
+  <body ng-app="userApp" ng-controller="mainCtrl as main" ng-show="main.loadme" ng-cloak >
+  
+  <div  role="main">
+  
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      
+    <!-- Fixed navbar -->
+    
+
+    <nav class="navbar navbar-inverse nav-justified " >
+          
+             <div class="container">
+
+             
+                <div class="row">
+
+                  <div class="col-md-12">
+
+
+                      <div class="col-md-1">
+                             <div class="navbar-header">
+                                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                           <span class="sr-only">Toggle navigation</span>
+                                           <span class="icon-bar"></span>
+                                          <span class="icon-bar"></span>
+                                          <span class="icon-bar"></span>
+                                      </button>
+ <a class="navbar-brand" ng-show="!main.isLoggedIn" title="Home" href="/"><img src="take.png"   style=" width:110px;height:70px; margin-top:-30px; margin-left: -30px; ">
+                                      </a>
+                                       <a class="navbar-brand" ng-show="main.isLoggedIn" href="/viewSurveyReport" title="view" ><img src="take.png"   style=" width:110px;height:70px; margin-top:-30px; margin-left: -30px; ">
+                                      </a>
+                                      
+                                        
+                            </div>
+
+                       </div>
+                       
+                       
+                            <div class="col-md-11">
+
+
+                               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"  style="  margin-top:20px; ">
+
+                                      <ul class="nav navbar-nav navbar-left custom-menu"  >
+                                         
+                                                          
+                                          <!--   <li><a  ng-show="!main.isLoggedIn" href="/login" data-toggle="collapse" data-target=".navbar-collapse" title="Register" >Admin</a></li>
+                                                                                          
+                                     
+                                                  <li><a  ng-show="main.isLoggedIn" href="/aboutus" data-toggle="collapse" data-target=".navbar-collapse" title="About us" >About us</a></li>
+                                                           
+                                         
+                                     
+                                             <li><a  ng-show="!main.isLoggedIn" href="/aboutus" data-toggle="collapse" data-target=".navbar-collapse" title="About us" >About us</a></li>-->
+                                                         
+                                          <li><a ng-show="main.isLoggedIn" href="#" title="Logout" ng-click="main.logout();" data-toggle="collapse" data-target=".navbar-collapse">Logout</a></li>
+                                    </ul>
+                             </div>
+
+                        </div>
+                  </div>
+              </div>
+        </div>
+
+    </nav>
+
+    <br>
+    
+ 
+
+
+  
+  <div ng-show="!main.isLoggedIn"  style="width: 100%">
+    <div class="container" style="background-color:white;top:90px;width: 100% " ng-view></div>
+
+    </div>
+   </div>
+   <div ng-show="main.isLoggedIn"  >
+    <div class="container" style="background-color:white;top:90px;width: 100% " ng-view></div>
+
+    </div>
+   </div>
+
+     
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+     document.getElementById("main1").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+     document.getElementById("main1").style.marginLeft = "0";
+}
+</script>
+
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    </div>
+
+
+<script >$("#slideshow > div:gt(0)").hide();
+
+setInterval(function() {
+  $('#slideshow > div:first')
+    //.fadeOut(2000)
+    .next()
+    .fadeIn(2000)
+    .end()
+    .appendTo('#slideshow');
+}, 3000);
+
+  
+</script>
+
+
+  </body>
+
+
+    <footer >
+
+
+        
+        
+       <div class="footer_wrapper">
+  
+        <CENTER> <h4><font color="#000000">© 2017 Digital Shark Technology. All Rights Reserved</font></h4></CENTER>
+    
+    
+      </div></footer> 
+  
+           
+ 
+</html>
