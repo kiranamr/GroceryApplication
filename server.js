@@ -1,6 +1,6 @@
 var express=require('express');
 var app=express();
-var port=process.env.PORT || 80;
+var port=process.env.PORT || 3000;
 var morgan = require('morgan');
 var mongoose = require('mongoose');
 var path=require('path');
@@ -24,7 +24,7 @@ app.use('/api',appRoutes);
 
 
 
-mongoose.connect('mongodb://admin:admin@cluster0-shard-00-00-ywd3q.mongodb.net:27017,cluster0-shard-00-01-ywd3q.mongodb.net:27017,cluster0-shard-00-02-ywd3q.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin',function(err)
+mongoose.connect('mongodb://admin:admin@cluster0-shard-00-00-i9a34.mongodb.net:27017,cluster0-shard-00-01-i9a34.mongodb.net:27017,cluster0-shard-00-02-i9a34.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin',function(err)
 	{
 		if(err)
 		{

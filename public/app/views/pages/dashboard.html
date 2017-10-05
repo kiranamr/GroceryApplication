@@ -24,10 +24,10 @@
 <div class="jumbotron">
 
 
-<form name="myForm" ng-submit="add.regSurvey(regData);">
-
- 
+<form name="myForm" ng-submit="add.regSurvey(regData);" >
   
+
+  <br>
   <label>Name: <font color="red">*</font>(Required) <input type="text"  class="form-control" ng-model="add.regData.name" name="name" required /></label>
 
   <br>
@@ -108,17 +108,18 @@
 
 <br><br>
 <b>11.Are you a Vegetarian or Non-Vegetarian?</b><font color="red"> *</font><br>
-<label><input type="radio" name="veg_nonveg"  ng-model="add.regData.veg_nonveg" value="Vegetarian" required /> Vegetarian</label><br>
-    <label><input type="radio" name="veg_nonveg" ng-model="add.regData.veg_nonveg" value="Non-Vegetarian" required /> Non-Vegetarian</label>
+<label><input type="radio" name="veg_nonveg"  ng-model="add.regData.veg_nonveg" value="Vegetarian"  required /> Vegetarian</label><br>
+    <label><input type="radio" name="veg_nonveg" ng-model="add.regData.veg_nonveg" value="Non-Vegetarian"  required /> Non-Vegetarian</label>
 
 <br><br>
-<b>12.Would you like to have special Hyderabad-Non veg items, from Hyderabad to be availed in Raichur?</b><font color="red"> *</font><br>
+<div ng-if="add.regData.veg_nonveg !== 'Vegetarian'">
+<b>11A)  Would you like to have special Hyderabad-Non veg items, from Hyderabad to be availed in Raichur?</b><font color="red"> *</font><br>
  
 
 <label><input type="radio" name="special_Hyd"  ng-model="add.regData.special_Hyd" value="Yes" required /> Yes</label><br>
 <label><input type="radio" name="special_Hyd"  ng-model="add.regData.special_Hyd" value="No" required /> No</label>
 <br><br>
-<b>13.Which would be your favourite hotel in Hyderabad for Non-veg food?</b><font color="red"> *</font><br>
+<b>11B) Which would be your favourite hotel in Hyderabad for Non-veg food?</b><font color="red"> *</font><br>
 
 <label><input type="radio" name="favourite"   ng-model="add.regData.favourite" value="Paradise" ng-click="ShowPassport('Paradise')" required /> Paradise</label><br>
     <label><input type="radio" name="favourite" ng-model="add.regData.favourite" value="Bawarchi" ng-click="ShowPassport('Bawarchi')" required /> Bawarchi </label><br>
@@ -132,7 +133,7 @@
 
 
 <br> 
-<b>14.If Special Non-veg items from Hyderabad would be availed in Raichur, than at what intervals would you prefer?</b><font color="red"> *</font><br>
+<b>11C) If Special Non-veg items from Hyderabad would be availed in Raichur, than at what intervals would you prefer?</b><font color="red"> *</font><br>
 <label><input type="radio" name="availed_in_Raichur"  ng-model="add.regData.availed_in_Raichur" ng-click="ShowPassportSpecial('Weekly once')" value="Weekly once" required /> Weekly once</label><br>
     <label><input type="radio" name="availed_in_Raichur" ng-model="add.regData.availed_in_Raichur" ng-click="ShowPassportSpecial('Weekly twice')" value="Weekly twice" required /> Weekly twice </label><br>
 <label><input type="radio" name="availed_in_Raichur"  ng-model="add.regData.availed_in_Raichur" ng-click="ShowPassportSpecial('Every two weeks')" value="Every two weeks" required /> Every two weeks</label><br>
@@ -142,20 +143,21 @@
 
 
 <br>
-  <label>15.It is Ok with you to pay delivery charges for Hyderabad Special Non-veg items,made avilable in Raichur?<font color="red"> *</font></label>
+  <label>11D) It is Ok with you to pay delivery charges for Hyderabad Special Non-veg items,made avilable in Raichur?<font color="red"> *</font></label>
   <br>
 
  <label><input type="radio" name="delivery"  ng-model="add.regData.delivery" value="Yes" required /> Yes</label><br>
    <label><input type="radio" name="delivery"  ng-model="add.regData.delivery" value="No" required /> No</label><br>
    <label><input type="radio" name="delivery"  ng-model="add.regData.delivery" value="Per order basis" required /> Per order basis</label><br>
    <br>
-  <label>16.Are you aware of organic/pesticide free food product?<font color="red"> *</font></label>
+   </div>
+  <label>12.Are you aware of organic/pesticide free food product?<font color="red"> *</font></label>
   <br>
 
  <label><input type="radio" name="organic"  ng-model="add.regData.organic" value="Yes" required /> Yes</label><br>
    <label><input type="radio" name="organic"  ng-model="add.regData.organic" value="No" required /> No</label><br>
   <br>
-  <label>17.Would you like to buy organic food products, if availed at your doorstep?<font color="red"> *</font></label>
+  <label>13.Would you like to buy organic food products, if availed at your doorstep?<font color="red"> *</font></label>
   <br>
 
  <label><input type="radio" name="doorstep"  ng-model="add.regData.doorstep" value="Yes" required /> Yes</label><br>

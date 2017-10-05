@@ -48,7 +48,7 @@ angular.module('mainControllers',['authServices'])
          if(data.data.success)
          {
          	
-             //app.successMsg=alert(data.data.message);
+              
               $timeout(function(){$location.path('/viewSurveyReport');
               window.location.reload(true);
               	app.successMsg=false;},3000);

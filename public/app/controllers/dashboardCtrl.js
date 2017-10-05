@@ -4,6 +4,12 @@ angular.module('dashboardControllers',[])
   $scope.surveys=[];
    $scope.surveys1=[];
   
+     $scope.IsVisiblevalues = false;
+            $scope.Showvalues = function (value) {
+                //If DIV is visible it will be hidden and vice versa.
+                $scope.IsVisiblevalues = value =="Non-Vegetarian";
+
+            }
 
     $scope.IsVisibleHotel = false;
             $scope.ShowPassport = function (value) {

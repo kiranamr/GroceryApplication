@@ -22,12 +22,12 @@ var fieldNames = [
 					 '9.Are you interest in fresh home made condimends (Keeping health in concern)',
 					 '10.As an end customer, I prefer for quality than for price, how would you agree to this statement?',
 					 '11.Are you a Vegetarian or Non-Vegetarian?',
-					 '12.Would you like to have special Hyderabad-Non veg items, from Hyderabad to be availed in Raichur?',
-					 '13.Which would be your favourite hotel in Hyderabad for Non-veg food?',
-					 '14.If Special Non-veg items from Hyderabad would be availed in Raichur, than at what intervals would you prefer?',
-					 '15.It is Ok with you to pay delivery charges for Hyderabad Special Non-veg items,made avilable in Raichur?',
-					 '16.Are you aware of organic/pesticide free food product?',
-					 '17.Would you like to buy organic food products, if availed at your doorstep?',
+					 '11A).Would you like to have special Hyderabad-Non veg items, from Hyderabad to be availed in Raichur?',
+					 '11B).Which would be your favourite hotel in Hyderabad for Non-veg food?',
+					 '11C).If Special Non-veg items from Hyderabad would be availed in Raichur, than at what intervals would you prefer?',
+					 '11D).It is Ok with you to pay delivery charges for Hyderabad Special Non-veg items,made avilable in Raichur?',
+					 '12.Are you aware of organic/pesticide free food product?',
+					 '13.Would you like to buy organic food products, if availed at your doorstep?',
 					 'Studentcode'
 					 ];
 
@@ -256,15 +256,110 @@ router.post('/surveysdata',function(req,res)
 		surveytable.agree=req.body.agree;
 		surveytable.veg_nonveg=req.body.veg_nonveg;
 		surveytable.special_Hyd=req.body.special_Hyd;
-		surveytable.favourite=req.body.favourite;
-		surveytable.availed_in_Raichur=req.body.availed_in_Raichur;
+		surveytable.favourite='';
+		if(req.body.favourite)
+		{
+				surveytable.favourite=req.body.favourite;
+		}
+		if(req.body.favourite1)
+		{
+				surveytable.favourite=req.body.favourite1;
+		}
+		surveytable.availed_in_Raichur='';
+		if(req.body.availed_in_Raichur)
+		{
+				surveytable.availed_in_Raichur=req.body.availed_in_Raichur;
+		}
+		if(req.body.availed_in_Raichur1)
+		{
+				surveytable.availed_in_Raichur=req.body.availed_in_Raichur1;
+		}
 		surveytable.delivery=req.body.delivery;
 		surveytable.studentcode=req.body.studentcode;
 		surveytable.organic=req.body.organic;
 		surveytable.doorstep=req.body.doorstep;
-		if(req.body.doorstep==null||req.body.doorstep==''||req.body.organic==null||req.body.organic==''||req.body.name==null||req.body.name==''||req.body.phone==null||req.body.phone==''||req.body.aware==null||req.body.aware==''||req.body.delivery==null||req.body.delivery==''||req.body.availed_in_Raichur==null||req.body.availed_in_Raichur==''||req.body.favourite==null||req.body.favourite==''||req.body.special_Hyd==null||req.body.special_Hyd==''||req.body.veg_nonveg==null||req.body.veg_nonveg==''||req.body.agree==null||req.body.agree==''||req.body.interest==null||req.body.interest==''||req.body.average==null||req.body.average==''||req.body.buy==null||req.body.buy==''||req.body.farmfresh==null||req.body.farmfresh==''||req.body.recieve==null||req.body.recieve==''||req.body.spend==null||req.body.spend==''||req.body.prefer==null||req.body.prefer==''||req.body.opinion==null||req.body.opinion=='')
+		if(req.body.name==null||req.body.name=='')
 		{
-			res.json({success:false,message:'Ensure all fields  were provided'});
+res.json({success:false,message:'Enter the name'});
+		}
+		else
+		if(req.body.phone==null||req.body.phone=='')
+		{
+res.json({success:false,message:'Enter the phone number'});
+		}
+		else
+		if(req.body.aware==null||req.body.aware=='')
+		{
+res.json({success:false,message:'Please answer question 1'});
+		}
+		else
+		if(req.body.opinion==null||req.body.opinion=='')
+		{
+res.json({success:false,message:'Please answer question 2'});
+		}
+		else
+		if(req.body.prefer==''||req.body.prefer==null)
+		{
+res.json({success:false,message:'Please answer question 3'});
+		}
+		else
+		if(req.body.spend==null||req.body.spend=='')
+		{
+res.json({success:false,message:'Please answer question 4'});
+		}
+		else
+		if(req.body.recieve==null||req.body.recieve=='')
+		{
+res.json({success:false,message:'Please answer question 5'});
+		}
+		else
+		if(req.body.farmfresh==null||req.body.farmfresh=='')
+		{
+res.json({success:false,message:'Please answer question 6'});
+		}
+		else
+		if(req.body.buy==null||req.body.buy=='')
+		{
+res.json({success:false,message:'Please answer question 7'});
+		}
+		else
+		if(req.body.average==null||req.body.average=='')
+		{
+res.json({success:false,message:'Please answer question 8'});
+		
+		}
+		else
+		if(req.body.interest==null||req.body.interest=='')
+		{
+res.json({success:false,message:'Please answer question 9'});
+		
+		}
+		else
+		if(req.body.agree==null||req.body.agree=='')
+		{
+res.json({success:false,message:'Please answer question 10'});
+		
+		}
+		else
+
+			    
+			     if(req.body.veg_nonveg==null||req.body.veg_nonveg=='')
+			   {
+				res.json({success:false,message:'Please answer question 11'});
+			   }
+			
+				
+	
+		else
+		if(req.body.organic==null||req.body.organic=='')
+		{
+res.json({success:false,message:'Please answer question 12'});
+		
+		}
+		else
+		if(req.body.doorstep==null||req.body.doorstep=='')
+		{
+			res.json({success:false,message:'Please answer question 13'});
 
 		}
 		else
@@ -307,7 +402,7 @@ router.post('/surveysdata',function(req,res)
 	    
 			
 	                
-	
+
 
 
 router.get('/surveysdata',function(req,res)
